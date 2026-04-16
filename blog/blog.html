@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S4-TURN! BLOG</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+    <nav id="sidebar">
+        <h3>Daftar Isi</h3>
+        <div class="sidebar-search">
+            <input type="text" id="searchInput" placeholder="Cari artikel..." />
+          </div>
+          
+        <ul>
+          <li><a href="#post1">Dying in second semester</a></li>
+          <li><a href="#post2">RIP my midterm scores</a></li>
+        </ul>
+        <button id="backBtn" class="back-btn">← Kembali</button>
+      </nav>      
+      
+  <main>
+    <header>
+      <h1>S4-TURN D4-ILY</h1>
+      <p class="tagline">Various random stories to accompany you</p>
+    </header>
+
+    <article id="post1">
+      <h2><a href="#">Dying in second semester</a></h2>
+      <p class="date">23 April 2025</p>
+      <p class="excerpt">Who is currently in second semester? atau maybe di semester genap?</p>
+      <div class="full-content">
+        <p>Well, gw mau sedikit cerita keadaan gw sekarang yang mungkin beberapa kalian juga relate. Tolong di highlight beberapa ya, ga semua.</p>
+        <br>
+        <p>Ini pertama kalinya gw merasa sekena mental ini men. Like at the first semester, gw tuh stress cuman at the begining karena gw mau ngurusin pindah jurusan dan segala macamnya dan ternyata di semester 2 baru bisa ngurus. And ya so far di semester 1 gw di kelas jurusan yang akan gw pindah tuh gw santai aja karena ya gurunya ga terlalu strict dan menurut gw pelajarannya tuh lu cuman perlu belajar pasti bisa kerjain ujian jadi ya so easy lah ya.</p>
+        <br>
+        <p>Tapi semua berubah setelah memasuki semester 2, kek semua profesor itu berubah jadi devil, semuanya jadi makin ketat dan apa yang lu pelajarin di kelas tuh bakal beda sama yang keluar di ujian. Wah, nilai gw langsung turun drastis, gw yakin nih yang awalnya gw rank 4 di semester 1 pasti bs jadi 20 an kali ya, belum lagi gw keteteran sama tugas - tugasnya. Tugas yang tiap minggu selalu ada, project yang muncul terus, ujian yang ga jelas soalnya dari mana, tiba - tiba banyak presentasi. Ya intinya bener - bener bikin gw cukup gila</p>
+        <br>
+        <p>Sebenarnya kuliah itu fun kalau tugas dan ujian tuh ga membludak begini sih, ya tapi mau gimana lagi ya ga? daripada ga lulus hadehhh....</p>
+        <br>
+        <p>Ya begitulah guys curahan hari ini, sampai sini dulu, semangat buat manusia yang sedang berjuang demi sekertas ijazah.</p>
+    </div>
+      <button class="toggle-btn" onclick="toggleContent(this)">Baca Selengkapnya</button>
+    </article>
+
+    <article id="post2">
+      <h2><a href="#">RIP my midterm scores</a></h2>
+      <p class="date">22 April 2025</p>
+      <p class="excerpt">Terkadang get a low score cause kesalahan bodoh pas ngerjain ujian itu lebih menyakitkan daripada get a low score karena ga belajar.</p>
+      <div class="full-content">
+        <p>Kemarin gw dibagiin ujian dan gw lihat nilai gw, lulus average kelas sih tapi harusnya gw bisa lebih bagus 18 point from my score kalau gw bisa lebih teliti tapi tetep aja rasanya gue mau marah karena gw salahnya cuman ditanda plus minus doang di dua soal, padahal kalau gw teliti gw bs dapet nilai lebih tinggi astagah.</p>
+        <br>
+        <p>Oke, gw bukan tipikal orang yang bisa kepikiran lama sama suatu hal, tapi masalahnya ini terulang lagi di hari ini, dimana dibagiin lagi ujian lain dan bro, this exam is really fucking kidding me. Like kali ini gw bukan salah di plus minus tapi gw isi jawaban di salah kolom and damn gw kehilangan 20 point nilai gw karena itu.</p>
+        <br>
+        <p>Ya, jujur gw merasa gw ceroboh n bodoh banget. Gw dapet nilai kecil karena my own stupidity. Ya, gw berharap di final nanti gw ga melakukan hal bodoh lagi. Even i still pass the exam tapi tetap aja sayang nilainya></p>
+        <br>
+        <p>I hope kalian ga ada yang mengalami kejadian serupa kayak gw karena jujur ini damagenya sampai nembus lambung.</p>
+      </div>
+      <button class="toggle-btn" onclick="toggleContent(this)">Baca Selengkapnya</button>
+    </article>
+
+    <footer>
+      <p>&copy; yeshawangmeiling@gmail.com.</p>
+    </footer>
+  </main>
+<script src="script.js"></script>
+</body>
+</html>
