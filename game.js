@@ -72,7 +72,7 @@ backButton.addEventListener("click", () => {
     }
     else {
       // ubah ke URL beranda-mu
-      window.location.href = "file:///C:/Users/hi/Desktop/Website%20Project/index.html";
+      window.location.href = "index.html";
     }
   }, 150);
 });
