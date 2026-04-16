@@ -1,76 +1,64 @@
-document.getElementById("next-btn").addEventListener("click", function () {
-  document.getElementById("welcome").style.display = "none";
-  document.getElementById("members").style.display = "block";
-});
+// Toggle content for article
+function toggleContent(btn) {
+    const article = btn.closest('article');
+    article.classList.toggle('expanded');
+    btn.textContent = article.classList.contains('expanded') ? 'Tutup' : 'Baca Selengkapnya';
+  }
 
-document.getElementById("back-btn").addEventListener("click", function () {
-  document.getElementById("members").style.display = "none";
-  document.getElementById("welcome").style.display = "flex";
-});
+  document.getElementById('searchInput').addEventListener('keyup', function (e) {
+    const query = e.target.value.toLowerCase();
+    const articles = document.querySelectorAll('article');
 
-const nextBtn = document.getElementById("next-btn");
-const welcome = document.getElementById("welcome");
-const members = document.getElementById("members");
+    for (const article of articles) {
+      const title = article.querySelector('h2').textContent.toLowerCase();
+      if (title.includes(query) && query.trim() !== "") {
+        article.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-nextBtn.addEventListener("click", () => {
-  welcome.style.display = "none";
-  members.style.display = "block";
-});
+        // Highlight sementara
+        article.style.boxShadow = '0 0 10px 2px #3b82f6';
+        setTimeout(() => {
+          article.style.boxShadow = '';
+        }, 1500);
 
+        break; // Cuma scroll ke yang pertama cocok
+      }
+    }
+  });
 
-// Stars background
-const canvas = document.getElementById("stars");
-const ctx = canvas.getContext("2d");
-let w = (canvas.width = window.innerWidth);
-let h = (canvas.height = window.innerHeight);
-let stars = [];
+  // Toggle sidebar visibility
+  function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('active');
+  }
+  
+  // Close sidebar if clicked outside
+  document.addEventListener('click', function (e) {
+    const sidebar = document.getElementById('sidebar');
+    const toggleBtn = document.querySelector('.sidebar-toggle');
+  
+    // Check if clicked outside the sidebar and the button
+    if (!sidebar.contains(e.target) && !toggleBtn.contains(e.target)) {
+      sidebar.classList.remove('active');
+    }
+  });
 
-window.addEventListener("resize", () => {
-  w = canvas.width = window.innerWidth;
-  h = canvas.height = window.innerHeight;
-});
+  // Kode di atas …
 
-function createStars(count) {
-  for (let i = 0; i < count; i++) {
-    stars.push({
-      x: Math.random() * w,
-      y: Math.random() * h,
-      radius: Math.random() * 1.5,
-      vx: -0.5 + Math.random(),
-      vy: Math.random() * 0.8 + 0.2,
-      alpha: Math.random(),
+// Tombol Kembali
+document.addEventListener('DOMContentLoaded', () => {
+  const backBtn = document.getElementById('backBtn');
+  if (backBtn) {
+    backBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      // Jika ada history, kembali; kalau tidak, redirect ke halaman utama
+      if (window.history.length > 1) {
+        window.history.back();
+      } else {
+        window.location.href = 'file:///C:/Users/hi/Desktop/Website%20Project/index.html'; // ganti '/' dengan URL fallback jika perlu
+      }
     });
   }
-}
+});
 
-function drawStars() {
-  ctx.clearRect(0, 0, w, h);
-  ctx.fillStyle = "white";
-  ctx.beginPath();
-  for (let star of stars) {
-    ctx.globalAlpha = star.alpha;
-    ctx.moveTo(star.x, star.y);
-    ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2, false);
-  }
-  ctx.fill();
-  updateStars();
-}
-
-function updateStars() {
-  for (let star of stars) {
-    star.x += star.vx;
-    star.y += star.vy;
-    if (star.y > h || star.x > w || star.x < 0) {
-      star.x = Math.random() * w;
-      star.y = 0;
-    }
-  }
-}
-
-function animateStars() {
-  drawStars();
-  requestAnimationFrame(animateStars);
-}
-
-createStars(150);
-animateStars();
+  
+  
