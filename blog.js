@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (window.history.length > 1) {
         window.history.back();
       } else {
-        window.location.href = 'file:///C:/Users/hi/Desktop/Website%20Project/index.html'; // ganti '/' dengan URL fallback jika perlu
+        window.location.href = 'index.html'; // ganti '/' dengan URL fallback jika perlu
       }
     });
   }
